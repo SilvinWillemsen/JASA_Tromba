@@ -5,10 +5,12 @@ The style file: jasanum2.bst
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: JASAtemplateNotes.bib
 Database file #2: sampbib.bib
+Warning--I didn't find a database entry for "ducceschi2019"
+Warning--I didn't find a database entry for "bilbao2019"
 Warning--missing publisher in inpress3
 You've used 7 entries,
             3111 wiz_defined-function locations,
-            1135 strings with 10771 characters,
+            1137 strings with 10794 characters,
 and the built_in function-call counts, 1471 in all, are:
 = -- 78
 > -- 29
@@ -47,4 +49,4 @@ warning$ -- 1
 while$ -- 7
 width$ -- 8
 write$ -- 64
-(There was 1 warning)
+(There were 3 warnings)

@@ -45,7 +45,7 @@
 %% NumberedRefs is used for numbered bibliography and citations.
 %% Default is Author-Year style.
 \documentclass[reprint,NumberedRefs]{JASAnew}
-
+\usepackage{cases}
 %% TurnOnLineNumbers
 %% Make lines be numbered in reprint style:
 % \documentclass[reprint,TurnOnLineNumbers]{JASAnew}
@@ -89,8 +89,11 @@ article.
 \section{\label{sec:1} Introduction}
 
 \subsection{History}
-The tromba marina is a monochord from \textbf{``insert country''} and created in ca. \textbf{``insert year''} (see~\ref{fig:tromba}). It was played mainly by women.
+The tromba marina is a monochord from \textbf{``insert country''} and created in ca. \textbf{``insert year''} (see~\ref{fig:tromba}). It was played mainly by women. The characteristic sound of the instrument comes from the rattling bridge, that makes the instrument sound like a trumpet rather than a bowed-string instrument. 
 
+Non-iterative collisions as presented in \cite{ducceschi2019} \dots
+
+In \cite{bilbao2019}, the same authors have published a continuation with a focus on sonic output quality. To the best of the authors' knowledge, no other literature 
 
 
  % Sample showing how to include figure, this is a floating figure
@@ -102,93 +105,103 @@ The tromba marina is a monochord from \textbf{``insert country''} and created in
 \caption{\label{fig:tromba}{The tromba marina.}}
 \end{figure}
 
-\section{\label{sec:2} Instrument design}
-The string rests on a rattling bridge, causing 
+\section{\label{sec:2} Instrument design and interaction}
+The tromba marina is a chordophone... The interaction with the instrument is through bowing. The string rests on a rattling bridge, causing the 
+The instrument rests with the neck on the shoulder of the player and the string is bowed close to the neck -- as opposed to other bowed-string instruments which are bowed closer to the bridge. Different pitches are played by playing overtones or harmonics by placing a finger slightly on a one-over-integer multiple of the string length to create a node creating an overtone. \textit{$\Leftarrow$ Notes: need to find better wording.}
 
-The interaction with the instrument is through bowing. 
-An example of another first-level Section with following example text that refers to subsections using 
-\verb+\ref{subsec:XXX}+ ...  EXAMPLE: Some background in
-section~\ref{sec:2} and details  in subsection~\ref{subsec:2:1}. 
+The instrument can be divided into three main components: the (bowed) string, the bridge and the body. 
 
-\subsection{\label{subsec:2:1} Sample subsection}
-
-
-   \subsubsection{Sample subsubsection\label{subsubsec:1}}
-
-\paragraph{Sample paragraph}Here is text following the paragraph
-heading.
-Here is a figure reference: is shown in Fig.~\ref{fig:FIG1}.
-
-\section{Inline and display math samples\label{sec:3}}
-
-\subsection{\label{subsec:3:3} Math and equations $\alpha\beta\Delta\Gamma$}
-Inline math may be typeset using the \verb+$+ delimiters. Bold math
-symbols may be achieved using the \verb+bm+ package and the
-\verb+\bm{#1}+ command it supplies. For instance, a bold $\alpha$ can
-be typeset as \verb+$\bm{\alpha}$+ giving $\bm{\alpha}$. Fraktur and
-Blackboard (or open face or double struck) characters should be
-typeset using the \verb+\mathfrak{#1}+ and \verb+\mathbb{#1}+ commands
-respectively. Both are supplied by the \texttt{amssymb} package which
-is included in JASAnew. For
-example, \verb+$\mathbb{R}$+ gives $\mathbb{R}$ and
-\verb+$\mathfrak{G}$+ gives $\mathfrak{G}$.
-
-In \LaTeX\ there are many different ways to display equations; a
-few preferred ways are noted below. Displayed math will center by
-default. 
-
-Below we have numbered single-line equations; this is the most common
-type of equation.
-\begin{eqnarray}
-\chi_+(p){\bf [}2|{\bf p}|(|{\bf p}|+p_z){\bf ]}^{-1/2}
-\left(
-\begin{array}{c}
-|{\bf p}|+p_z\\
-px+ip_y
-\end{array}\right)\;,
-\\
-\left\{%
- 1234567890abc123\alpha\beta\gamma\delta1234556\alpha\beta
- \frac{1\sum^{a}_{b}}{A^2}%
-\right\}%
-\label{eq:one}.
-\end{eqnarray}
-Note the open one in Eq.~(\ref{eq:one}).
-
-Not all numbered equations will fit within a narrow column this
-way. The equation number will move down automatically if it cannot fit
-on the same line with a one-line equation.
+\section{Models}
+In this section the model equations will be presented. 
+\paragraph{Notation}
+Subscripts `$t$' and `$x$' denote a single derivative with respect to time or space. Furthermore, for clarity, subscripts `$\text{s}$' and `$\text{p}$' will be given for parameter symbols that are shared between the string and the plate.
+\subsection{Damped Stiff String}
+Using state variable $u=u(x,t)$, the motion of a damped stiff string is described as
 \begin{equation}
-\chi_+(p){\bf [}2|{\bf p}|(|{\bf p}|+p_z){\bf ]}^{-1/2}
-\alpha\beta\gamma\delta123455678\alpha\beta\Gamma\Delta
- \frac{1\sum^{a}_{b}}{A^2}1234%
+    \rho_\text{s} A u_{tt} = Tu_{xx} - E_\text{s}Iu_{xxxx}-2\rho_\text{s}A\sigma_{0,\text{s}}u_t+2\rho_\text{s}A\sigma_{1,\text{s}}u_{txx},
 \end{equation}
-% No blank lines after \end{equation}
-When the \verb+\label{#1}+ command is used [ie. input for
-Eq.~(\ref{eq:one})], the equation can be referred to in text without
-knowing the equation number that \TeX\ will assign to it. Just
-use \verb+\ref{#1}+, where \verb+#1+ is the same name that used in
-the \verb+\label{#1}+ command.
-
-Unnumbered single-line equations can be typeset
-using the \verb+\[+, \verb+\]+ format:
-\[g^+g^+ \rightarrow g^+g^+g^+g^+ \dots ~,~~q^+q^+\rightarrow
-q^+g^+g^+ \dots ~. \]
-
-
-Note the equations can be lettered with the
-subequations environment:
-\begin{subequations}
-\begin{eqnarray}
-A&=&mc, \label{eqa}
+with material density $\rho_\text{s}$ (kg$\cdot$m$^{-3}$), cross-sectional area $A = \pi r^2$ (m$^2$), where $r$ is the string radius (m), tension $T$ (N), Young's modulus $E_\text{s}$ (Pa), area moment of inertia $I = \pi r^4 / 4$ (m$^4$) and frequency independent and dependent loss factors $\sigma_{0,\text{s}}$ (s$^{-1}$) and $\sigma_{1,\text{s}}$ (m$^2$/s).
+\subsection{Bridge}
+The bridge is modelled as a damped mass with a linear restoring force. Its displacement $w=w(t)$ is described as
+\begin{equation}
+    Mw_{tt}=-M\omega_0^2w-MRw_t,
+\end{equation}
+with bridge-mass $M$ (kg), angular frequency $\omega_0$ (s$^{-1}$) and damping coefficient $R$ (s$^{-1}$). The restoring force has been added to simulate the fact that\dots  It might seem odd have all terms include a multiplication with mass $M$, but as we start adding the effects of other parts of the system, it will make more sense.
+\subsection{Body}
+For simplicity, the body is modelled as a 2D plate. The displacement $v = v(x,y,t)$ at location $(x,y)$ is described as
+\begin{equation}
+    \rho_\text{p} H v_{tt}=-D\Delta\Delta v-2\sigma_{0,\text{p}}v_t+2\sigma_{1,\text{p}}\Delta v_t,
+\end{equation}
+with material density $\rho_\text{p}$ (kg$\cdot$m$^3$), plate thickness $H$ (m), $D = E_\text{p}H^3/12(1-\nu^2)$ (kg$\cdot$m$^2\cdot$s$^{-2}$), where $E_\text{p}$ is the Young's modulus (Pa) and $\nu$ the unitless Poisson's ratio, and and frequency independent and dependent loss factors $\sigma_{0,\text{p}}$ (s$^{-1}$) and $\sigma_{1,\text{p}}$ (m$^2$/s). Furthermore, $\Delta$ represents the 2D Laplacian and is defined as
+\begin{equation}
+    \Delta = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2}.
+\end{equation}
+\subsection{Implementation}
+The complete system is shown in Eqs.~(\ref{eq:systemString}) --~(\ref{eq:systemEtaSpring}).
+\begin{subnumcases}{\label{eq:trombaSystem}}
+    \begin{aligned}&\rho_\text{s} A \delta_{tt}u^n_l\\
+    & \end{aligned} & $\!\!\!\!\!\!\!\!\!\!\begin{aligned}=&\ T\delta_{xx}u^n_l - E_\text{s}I\delta_{xxxx}u^n_l \\
+        &- 2\rho_\text{s}A\sigma_{0,\text{s}}\delta_{t\cdot}u^n_l\\
+        &+2\rho_\text{s}A\sigma_{1,\text{s}}\delta_{t-}\delta_{xx}u^n_l-J_\text{s}(l_\text{br})F_\alpha\end{aligned}\quad\ \ $\label{eq:systemString} \\
+        \begin{aligned}
+        &M \delta_{tt}w^n\\
+        &
+    \end{aligned} &$\!\!\!\!\!\!\!\!\!\!
+        \begin{aligned}=&-M\omega_0^2w^n - MR \delta_{t\cdot}w^n\\
+            & + \big(\mu_{t+}\psi^{n-1/2}\big)g^n + F_\alpha
+        \end{aligned}$\\
+    \begin{aligned}
+    &\rho_\text{p} H \delta_{tt}v^n_{(l,m)}\\ 
+    & \\
+    &
+    \end{aligned}
+    & $\!\!\!\!\!\!\!\!\!\!\begin{aligned} 
+    =&-D\delta_{\Delta \boxplus}\delta_{\Delta \boxplus}v_{(l,m)}^n - 2\sigma_{0, \text{p}}\delta_{t\cdot}v^n_{(l,m)}\\
+    &%\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!
+    + 2\sigma_{1, \text{p}}\delta_{t-}\delta_{\Delta\boxplus}v_(l,m)^n\\
+    & - J_\text{p}(l_\text{br},m_\text{br}) \big(\mu_{t+}\psi^{n-1/2}\big)g^n
+    \end{aligned}$\\
+\begin{aligned}
+\delta_{t+}\psi^{n-1/2} 
+\end{aligned}
+&$\!\!\!\!\!\!\!\!\!\!
+\begin{aligned}= g^n\delta_{t\cdot}\eta_\text{c}^n
+\end{aligned}$\\
+\begin{aligned}
+    \eta_c^n 
+\end{aligned}
+&$\!\!\!\!\!\!\!\!\!\!
+\begin{aligned}
+    = v_{(l_\text{br},m_\text{br})}^n - w^n
+\end{aligned}$\\
+    \begin{aligned}
+        &F_\alpha \\
+        &
+    \end{aligned}
+    & $\!\!\!\!\!\!\!\!\!\!
+    \begin{aligned}
+        =&\ K_1\mu_{tt}\eta_\text{sp}^n + K_3(\eta_\text{sp}^n)^2\mu_{t\cdot}\eta_\text{sp}^n \\
+        &+ 2 \sigma_\times\delta_{t\cdot}\eta_\text{sp}^n
+    \end{aligned}$\label{eq:fAlphaDamp}\\
+\begin{aligned}\eta_s^n\end{aligned} &$\!\!\!\!\!\!\!\!\!\!
+\begin{aligned}
+    = u_{l_\text{br}}^n - w^n
+\end{aligned}$\label{eq:systemEtaSpring}
+\end{subnumcases}
+% \begin{subnumcases}{\label{eq:trombaSystem}}
+%     \rho_\text{s} A \delta_{tt}u^n_l & $\!\!\!\!=T\delta_{xx}u^n_l - EI\delta_{xxxx}u^n_l - J_\text{s}(l_\text{br})F_\alpha\qquad\quad$ \\
+%     M \delta_{tt}w^n &$\!\!\!\!=-M\omega_0^2w^n + \big(\mu_{t+}\psi^{n-1/2}\big)g^n + F_\alpha\qquad\quad$\\
+%     \begin{aligned}&\rho_\text{p} H \delta_{tt}v^n_{(l,m)}\\ 
+%     & \end{aligned} & $\!\!\!\!\!\!\!\,\,\begin{aligned} =&-D\delta_{\Delta \boxplus}\delta_{\Delta \boxplus}v_{(l,m)}^n \\
+%     &- J_\text{p}(l_\text{br},m_\text{br}) \big(\mu_{t+}\psi^{n-1/2}\big)g^n \end{aligned}$\\
+%     \delta_{t+}\psi^{n-1/2} &$\!\!\!\!= g^n\delta_{t\cdot}\eta_\text{c}^n$\\
+%     \eta_c^n &$\!\!\!\!= v_{(l_\text{br},m_\text{br})}^n - w^n$\\
+%     F_\alpha & $\!\!\!\!= K_1\mu_{tt}\eta_\text{s}^n + K_3(\eta_\text{s}^n)^2\mu_{t\cdot}\eta_\text{s}^n$\label{eq:fAlpha}\\
+%     \eta_s^n &$\!\!\!\!= u_{l_\text{br}}^n - w^n$\label{eq:etaSpring}
+% \end{subnumcases}
 \\
-B&=&mc^2, \label{eqb}
-\\
-C&\agt& mc^3. \label{eqc}
-\end{eqnarray}
-\end{subequations}
-Referenced: Eqs.~(\ref{eqa}), (\ref{eqb}), and (\ref{eqc}).
-
+%
+The time-difference operators have been chosen so that the system is most accurate but still explicit 
 
 \section{Floats, Figures and Tables}
 
