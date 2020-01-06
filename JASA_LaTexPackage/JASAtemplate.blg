@@ -7,46 +7,45 @@ Database file #1: JASAtemplateNotes.bib
 Database file #2: sampbib.bib
 Warning--I didn't find a database entry for "ducceschi2019"
 Warning--I didn't find a database entry for "bilbao2019"
-Warning--missing publisher in inpress3
-You've used 7 entries,
+You've used 0 entries,
             3111 wiz_defined-function locations,
-            1137 strings with 10794 characters,
-and the built_in function-call counts, 1471 in all, are:
-= -- 78
-> -- 29
-< -- 1
-+ -- 14
-- -- 7
-* -- 182
-:= -- 148
-add.period$ -- 7
-call.type$ -- 7
-change.case$ -- 6
+            1101 strings with 9915 characters,
+and the built_in function-call counts, 40 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 139
-empty$ -- 160
-format.name$ -- 8
-if$ -- 294
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 32
-newline$ -- 35
-num.names$ -- 4
-pop$ -- 30
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 14
+num.names$ -- 0
+pop$ -- 0
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 26
+skip$ -- 1
 stack$ -- 0
-substring$ -- 43
-swap$ -- 124
-text.length$ -- 1
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 7
-width$ -- 8
-write$ -- 64
-(There were 3 warnings)
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 13
+(There were 2 warnings)

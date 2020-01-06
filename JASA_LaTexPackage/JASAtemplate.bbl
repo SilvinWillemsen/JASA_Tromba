@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{}
 \def\enquote#1,{``#1,''}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -10,42 +10,5 @@
 \providecommand{\dourl}[1]{\href{http://#1}{\nolinkurl{#1}}}
 \providecommand{\dodoi}[1]{doi: \href{http://dx.doi.org/#1}{\nolinkurl{#1}}}
   \def\eatspace #1{#1}
-
-\bibitem{Note1}
-\bibinfo{note}{See Supplementary materials at [URL will be inserted by AIP] for
-  [give a brief description of the material].}
-
-\bibitem{booksamp1}
-\bibinfo{author}{J.~P. Hollman}, \emph{\bibinfo{title}{Heat Transfer}},
-  \bibinfo{}{8th} ed.  (\bibinfo{publisher}{McGraw-Hill}, \bibinfo{address}{New
-  York}, \bibinfo{year}{1997}), p.~\bibinfo{pages}{55}.
-
-\bibitem{Note2}
-\bibinfo{note}{Here is the second footnote. It will appear before the beginning
-  of the bibliography in Author-Year style (default) or it will be interleaved
-  with other references when using the Numbered\discretionary {-}{}{}Refs
-  option.}
-
-\bibitem{Note3}
-\bibinfo{note}{Here is a third footnote.}
-
-\bibitem{joursamp1}
-\bibinfo{author}{R.~S. Christian}, \bibinfo{author}{R.~E. Davies},
-  \bibinfo{author}{A.~B. Tubis}, and \bibinfo{author}{C.~A. Anderson},
-  \enquote{\bibinfo{title}{Effects of air loading on tympani membrane
-  vibrations}}, \bibinfo{journal}{J. Acoust. Soc. Am.} \textbf{76},
-  \bibinfo{pages}{1336--1345} (\bibinfo{year}{1984}).
-
-\bibitem{inpress3}
-\bibinfo{author}{A.~Tolstoy}, \enquote{\bibinfo{title}{Using low frequencies
-  for geoacoustic inversion}}, in \emph{\bibinfo{booktitle}{Theoretical and
-  Computational Acoustics 2010}}, \bibinfo{note}{{D}resden, {G}ermany,(in
-  press)}.
-
-\bibitem{sampcode2}
-{\footnotesize\sc\bibinfo{language}{DISPERSE}}, ``\bibinfo{description}{A
-  system for generating dispersion curves},'' {\let\emph\relax
-  \emph{\bibinfo{title}{User's Manual Version 2.0.16d}}} (\eatspace  2001),
-  \dodoi{10.1177/1045389X16667559}.
 
 \end{thebibliography}
